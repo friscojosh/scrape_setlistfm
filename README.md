@@ -4,7 +4,7 @@ setlist.fm scraper
 For prop bets on which song an act is likely to open their set with,
 historical data are useful to compute base rates. The best source of
 data on which songs performers have used to open their sets in the past
-is published on a wiki called setlist.fm. The functions in the
+is published on a wiki called setlist.fm. The functions in this
 repository scrape and summarize setlist.fm data so you can more easily
 set your expectations about the most likely candidates to open a
 Halftime show.
@@ -22,7 +22,7 @@ url for the artist. Pass the url as a string, in quotes as well.
 # scrape_artist("shakira", "https://www.setlist.fm/search?query=shakira")
 ```
 
-When the scape cpmpletes you’ll want to inspect the data and clean it
+When the scape completes you’ll want to inspect the data and clean it
 where necessary. This step is beyond the scope of this document. However
 you can simply summarize the data as-is with the quick helper function
 `load_all_openers()` The function accepts the artist’s name, the year of

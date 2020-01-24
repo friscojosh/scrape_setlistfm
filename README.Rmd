@@ -10,7 +10,7 @@ library(tidylog)
 source("scripts/functions/scrape_setlistfm.R") # scraping functions
 ```
 
-For prop bets on which song an act is likely to open their set with, historical data are useful to compute base rates. The best source of data on which songs performers have used to open their sets in the past is published on a wiki called setlist.fm. The functions in the repository scrape and summarize setlist.fm data so you can more easily set your expectations about the most likely candidates to open a Halftime show.
+For prop bets on which song an act is likely to open their set with, historical data are useful to compute base rates. The best source of data on which songs performers have used to open their sets in the past is published on a wiki called setlist.fm. The functions in this repository scrape and summarize setlist.fm data so you can more easily set your expectations about the most likely candidates to open a Halftime show.
 
 To use the scraper, call `scrape_artist()` with two arguments: a string that can be anything you want, but that will be used to name the output of the scrape. I recommend the artist's name. Use quotes. Spaces are OK. The resulting .csv is saved in `data/output/` with `_set_lists.csv` appended to the name you provide. The second argument is the setlist.fm url for the artist. Pass the url as a string, in quotes as well.
 
@@ -19,7 +19,7 @@ To use the scraper, call `scrape_artist()` with two arguments: a string that can
 # scrape_artist("jlo", "https://www.setlist.fm/search?query=jennifer+lopez")
 # scrape_artist("shakira", "https://www.setlist.fm/search?query=shakira")
 ```
-When the scape cpmpletes you'll want to inspect the data and clean it where necessary. This step is beyond the scope of this document. However you can simply summarize the data as-is with the quick helper function `load_all_openers()` The function accepts the artist's name, the year of the Super Bowl performance, and path to the data file created by `scrape_artist()` as arguments.
+When the scape completes you'll want to inspect the data and clean it where necessary. This step is beyond the scope of this document. However you can simply summarize the data as-is with the quick helper function `load_all_openers()` The function accepts the artist's name, the year of the Super Bowl performance, and path to the data file created by `scrape_artist()` as arguments.
 
 ```{r}
 library(purrr)
