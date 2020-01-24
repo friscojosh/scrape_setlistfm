@@ -7,7 +7,6 @@ output:
 ```{r echo=FALSE, message=FALSE, error=FALSE}
 library(tidyverse)
 library(tidylog)
-library(knitr)
 source("scripts/functions/scrape_setlistfm.R") # scraping functions
 ```
 
@@ -36,10 +35,10 @@ openers <- pmap(list(names, years, paths), load_all_openers) %>% map_df(as_tibbl
 You now have a list containing song openers by artist, with the frequency and share computed.
 
 ```{r}
-openers %>% filter(artist == "Jennifer Lopez") %>% kable()
+openers %>% filter(artist == "Jennifer Lopez")
 ```
 ```{r}
-openers %>% filter(artist == "Shakira") %>% kable()
+openers %>% filter(artist == "Shakira")
 ```
 
 ```{r}
@@ -47,6 +46,6 @@ openers_by_year <- load_all_openers_by_year("Jennifer Lopez", 2020, "data/output
 ```
 
 ```{r}
-as_tibble(openers_by_year) %>%  kable()
+as_tibble(openers_by_year)
 ```
 
