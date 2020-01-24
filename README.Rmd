@@ -26,7 +26,7 @@ library(purrr)
 source("scripts/functions/summarize_data.R") # scraping functions
 
 names <- c("Jennifer Lopez", "Shakira")
-years <- c(2020, 2020)
+years <- c(2020)
 paths <- c("data/output/jlo_set_lists.csv", "data/output/shakira_set_lists.csv")
 
 openers <- pmap(list(names, years, paths), load_all_openers) %>% map_df(as_tibble)
