@@ -15,7 +15,7 @@ load_all_openers <- function(artist, sb_year, file_name) {
              # filter to data prior to or equal to the Super Bowl year.
              year <= sb_year,
              keep != -1) %>%
-      group_by(sets) %>%
+      group_by(artist, sets) %>%
       summarize(n = n()) %>%
       mutate(pct = round(n / sum(n), 2)) %>%
       arrange(-n)
@@ -40,7 +40,7 @@ load_all_openers_by_year <- function(artist, sb_year, file_name) {
              # filter to data prior to or equal to the Super Bowl year.
              year <= sb_year,
              keep != -1) %>%
-      group_by(year, sets) %>%
+      group_by(year, artist, sets) %>%
       summarize(n = n()) %>%
       mutate(pct = round(n / sum(n), 2)) %>%
       arrange(-year, -n)
